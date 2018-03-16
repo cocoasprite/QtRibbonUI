@@ -20,8 +20,10 @@ TEMPLATE        = lib
 DESTDIR         = $$PWD/../bin
 
 SOURCES         += \
-                QtRibbonWindow.cpp
+                QtRibbonWindow.cpp \
+    QtRibbonBar.cpp
 
 HEADERS         += \
                 QtRibbonWindow.h \
-                LibRibbonUIGlobal.h
+                LibRibbonUIGlobal.h \
+    QtRibbonBar.h
