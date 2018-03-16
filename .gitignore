@@ -1,0 +1,10 @@
+# Qt-es
+
+*.pro.user
+*.pro.user.*
+
+# C++ objects and libs
+
+*.a
+*.exe
+*.dll
