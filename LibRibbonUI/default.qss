@@ -1,0 +1,57 @@
+/* Window关闭按钮 */
+QPushButton#QtRibbonCloseWindowButton
+{
+    background-color: #E3E3E5;
+    border:none;
+}
+QPushButton#QtRibbonCloseWindowButton:hover
+{
+    background-color:#F0604D;
+}
+QPushButton#QtRibbonCloseWindowButton:pressed
+{
+    background-color:#F0604D;
+}
+QPushButton#QtRibbonCloseWindowButton:focus
+{
+    outline: none;
+}
+
+/* Window最大化按钮 */
+QPushButton#QtRibbonMaxWindowButton
+{
+    background-color: #E3E3E5;
+    border:none;
+}
+QPushButton#QtRibbonMaxWindowButton:hover
+{
+    background-color:#C1D1B8;
+}
+QPushButton#QtRibbonMaxWindowButton:pressed
+{
+    background-color:#A5AF9B;
+}
+QPushButton#QtRibbonMaxWindowButton:focus
+{
+    outline: none;
+}
+
+/* Window最小化按钮 */
+QPushButton#QtRibbonMinWindowButton
+{
+    background-color: #E3E3E5;
+    border:none;
+}
+QPushButton#QtRibbonMinWindowButton:hover
+{
+    background-color:#C1D1B8;
+}
+QPushButton#QtRibbonMinWindowButton:pressed
+{
+    background-color:#A5AF9B;
+}
+QPushButton#QtRibbonMinWindowButton:focus
+{
+    outline: none;
+}
+
