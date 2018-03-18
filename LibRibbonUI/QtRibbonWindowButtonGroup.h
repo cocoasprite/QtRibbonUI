@@ -26,7 +26,7 @@ public slots:
 
 private:
     friend class SAWindowButtonGroupPrivate;
-    QtRibbonWindowButtonGroupPrivate *m_bgp;
+    QtRibbonWindowButtonGroupPrivate *m_wbgp;
 };
 
 #endif // QTRIBBONWINDOWBUTTONGROUP_H

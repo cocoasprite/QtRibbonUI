@@ -134,20 +134,19 @@ public:
 };
 
 QtRibbonWindowButtonGroup::QtRibbonWindowButtonGroup(QWidget *parent)
-    : QWidget(parent), m_bgp(new QtRibbonWindowButtonGroupPrivate)
+    : QWidget(parent), m_wbgp(new QtRibbonWindowButtonGroupPrivate)
 {
     if(parent)
         parent->installEventFilter(this);
-
     Qt::WindowFlags flags = parentWidget()->windowFlags();
-    m_bgp->setupMinButton(this, (flags & Qt::WindowMinimizeButtonHint));
-    m_bgp->setupMaxButton(this, (flags & Qt::WindowMaximizeButtonHint));
-    m_bgp->setupCloseButton(this, (flags & Qt::WindowCloseButtonHint));
+    m_wbgp->setupMinButton(this, (flags & Qt::WindowMinimizeButtonHint));
+    m_wbgp->setupMaxButton(this, (flags & Qt::WindowMaximizeButtonHint));
+    m_wbgp->setupCloseButton(this, (flags & Qt::WindowCloseButtonHint));
 }
 
 QtRibbonWindowButtonGroup::~QtRibbonWindowButtonGroup()
 {
-    delete m_bgp;
+    delete m_wbgp;
 }
 
 bool QtRibbonWindowButtonGroup::eventFilter(QObject *watched, QEvent *event)
@@ -178,7 +177,7 @@ void QtRibbonWindowButtonGroup::parentResize()
 
 QSize QtRibbonWindowButtonGroup::sizeHint()
 {
-    return m_bgp->sizeHint();
+    return m_wbgp->sizeHint();
 }
 
 void QtRibbonWindowButtonGroup::closeWindow()
@@ -210,16 +209,16 @@ void QtRibbonWindowButtonGroup::maxWindow()
 
         if(parent->isMaximized())
         {
-            if(m_bgp->m_buttonMax)
+            if(m_wbgp->m_buttonMax)
             {
-                m_bgp->m_buttonMax->setIcon(style()->standardIcon(QStyle::SP_TitleBarNormalButton));
+                m_wbgp->m_buttonMax->setIcon(style()->standardIcon(QStyle::SP_TitleBarNormalButton));
             }
         }
         else
         {
-            if(m_bgp->m_buttonMax)
+            if(m_wbgp->m_buttonMax)
             {
-                m_bgp->m_buttonMax->setIcon(style()->standardIcon(QStyle::SP_TitleBarMaxButton));
+                m_wbgp->m_buttonMax->setIcon(style()->standardIcon(QStyle::SP_TitleBarMaxButton));
             }
         }
     }

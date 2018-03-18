@@ -55,3 +55,8 @@ QPushButton#QtRibbonMinWindowButton:focus
     outline: none;
 }
 
+/* 菜单栏 */
+QtRibbonWindowBar
+{
+  background-color: #E3E6E8;
+}
