@@ -18,8 +18,7 @@ int main(int argc, char *argv[])
 
     w.ribbonWindowBar()->quickAccessBar()->addButton(new QAction(QIcon(":/save.png"), "保存", &w));
     w.ribbonWindowBar()->quickAccessBar()->addButton(new QAction(QIcon(":/undo.png"), "撤销", &w));
-    w.ribbonWindowBar()->quickAccessBar()->addButton(new QAction(QIcon(":/redo.png"), "重做", &w));
-    w.ribbonWindowBar()->quickAccessBar()->addSeparator();
+    w.ribbonWindowBar()->quickAccessBar()->addButton(new QAction(QIcon(":/redo.png"), "保存", &w));
 
     qDebug() << "window build cost:" << cost.elapsed() << " ms";
 

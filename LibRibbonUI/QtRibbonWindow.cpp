@@ -41,7 +41,7 @@ void QtRibbonWindow::onWindowTitleChanged(const QString &title)
 {
     if(!title.isEmpty())
     {
-        //m_wb->quickAccessBar()
+        m_wb->quickAccessBar()->setTitle(title);
     }
 }
 

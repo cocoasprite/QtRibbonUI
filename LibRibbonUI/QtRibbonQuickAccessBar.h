@@ -3,11 +3,11 @@
 
 #include "LibRibbonUIGlobal.h"
 #include <QFrame>
-#include <QAction>
 
-class QtRibbonQuickAccessBarPrivate;
+class QAction;
 class QtRibbonToolButton;
 class QLabel;
+class QHBoxLayout;
 
 class LIBRIBBONUISHARED_EXPORT QtRibbonQuickAccessBar : public QFrame
 {
@@ -18,12 +18,16 @@ public:
 
 public:
     void setLogo(const QIcon &icon);
-    QtRibbonToolButton *addButton(QAction *action);
+    void setTitle(const QString &title);
+    void addButton(QAction *action);
     void addSeparator();
 
 private:
-    QtRibbonQuickAccessBarPrivate *m_qabp;
     QLabel *m_logo;
+    QLabel *m_title;
+    QHBoxLayout *m_layoutLogo;
+    QHBoxLayout *m_layoutBar;
+    QHBoxLayout *m_layoutTitle;
 };
 
 #endif // QTRIBBONQUICKACCESSBAR_H
