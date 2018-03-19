@@ -1,19 +1,19 @@
-#include "QtRibbonWindowButtonGroup.h"
+#include "QtRibbonButtonGroup.h"
 #include <QPushButton>
 #include <QStyle>
 #include <QEvent>
 
-class QtRibbonWindowButtonGroupPrivate
+class QtRibbonButtonGroupPrivate
 {
 public:
-    QtRibbonWindowButtonGroupPrivate() :
+    QtRibbonButtonGroupPrivate() :
         m_buttonClose(nullptr),
         m_buttonMin(nullptr),
         m_buttonMax(nullptr)
     {}
 
 public:
-    void setupCloseButton(QtRibbonWindowButtonGroup* parent, bool on)
+    void setupCloseButton(QtRibbonButtonGroup* parent, bool on)
     {
         if(on)
         {
@@ -23,7 +23,7 @@ public:
                 m_buttonClose->setObjectName(QStringLiteral("QtRibbonCloseWindowButton"));
                 m_buttonClose->setFixedSize(40,30);
                 parent->connect(m_buttonClose, &QAbstractButton::clicked, parent,
-                                &QtRibbonWindowButtonGroup::closeWindow);
+                                &QtRibbonButtonGroup::closeWindow);
                 QIcon icon = parent->style()->standardIcon(QStyle::SP_TitleBarCloseButton);
                 m_buttonClose->setIcon(icon);
             }
@@ -37,7 +37,7 @@ public:
         }
         updateSize(parent);
     }
-    void setupMaxButton(QtRibbonWindowButtonGroup* parent, bool on)
+    void setupMaxButton(QtRibbonButtonGroup* parent, bool on)
     {
         if(on)
         {
@@ -47,7 +47,7 @@ public:
                 m_buttonMax->setObjectName(QStringLiteral("QtRibbonMaxWindowButton"));
                 m_buttonMax->setFixedSize(30,30);
                 parent->connect(m_buttonMax, &QAbstractButton::clicked, parent,
-                                &QtRibbonWindowButtonGroup::maxWindow);
+                                &QtRibbonButtonGroup::maxWindow);
                 QIcon icon = parent->style()->standardIcon(QStyle::SP_TitleBarMaxButton);
                 m_buttonMax->setIcon(icon);
             }
@@ -61,7 +61,7 @@ public:
         }
         updateSize(parent);
     }
-    void setupMinButton(QtRibbonWindowButtonGroup* parent, bool on)
+    void setupMinButton(QtRibbonButtonGroup* parent, bool on)
     {
         if(on)
         {
@@ -71,7 +71,7 @@ public:
                 m_buttonMin->setObjectName(QStringLiteral("QtRibbonMinWindowButton"));
                 m_buttonMin->setFixedSize(30,30);
                 parent->connect(m_buttonMin, &QAbstractButton::clicked, parent,
-                                &QtRibbonWindowButtonGroup::minWindow);
+                                &QtRibbonButtonGroup::minWindow);
                 QIcon icon = parent->style()->standardIcon(QStyle::SP_TitleBarMinButton);
                 m_buttonMin->setIcon(icon);
             }
@@ -86,7 +86,7 @@ public:
         updateSize(parent);
     }
 
-    void updateSize(QtRibbonWindowButtonGroup* parent)
+    void updateSize(QtRibbonButtonGroup* parent)
     {
         int span = 0;
         if(m_buttonClose)
@@ -133,8 +133,8 @@ public:
     QPushButton *m_buttonMax;
 };
 
-QtRibbonWindowButtonGroup::QtRibbonWindowButtonGroup(QWidget *parent)
-    : QWidget(parent), m_wbgp(new QtRibbonWindowButtonGroupPrivate)
+QtRibbonButtonGroup::QtRibbonButtonGroup(QWidget *parent)
+    : QWidget(parent), m_wbgp(new QtRibbonButtonGroupPrivate)
 {
     if(parent)
         parent->installEventFilter(this);
@@ -144,12 +144,12 @@ QtRibbonWindowButtonGroup::QtRibbonWindowButtonGroup(QWidget *parent)
     m_wbgp->setupCloseButton(this, (flags & Qt::WindowCloseButtonHint));
 }
 
-QtRibbonWindowButtonGroup::~QtRibbonWindowButtonGroup()
+QtRibbonButtonGroup::~QtRibbonButtonGroup()
 {
     delete m_wbgp;
 }
 
-bool QtRibbonWindowButtonGroup::eventFilter(QObject *watched, QEvent *event)
+bool QtRibbonButtonGroup::eventFilter(QObject *watched, QEvent *event)
 {
     if(watched == parentWidget())
     {
@@ -165,7 +165,7 @@ bool QtRibbonWindowButtonGroup::eventFilter(QObject *watched, QEvent *event)
     return false;//不截断任何事件
 }
 
-void QtRibbonWindowButtonGroup::parentResize()
+void QtRibbonButtonGroup::parentResize()
 {
     QWidget* parent = parentWidget();
     if(parent)
@@ -175,24 +175,24 @@ void QtRibbonWindowButtonGroup::parentResize()
     }
 }
 
-QSize QtRibbonWindowButtonGroup::sizeHint()
+QSize QtRibbonButtonGroup::sizeHint()
 {
     return m_wbgp->sizeHint();
 }
 
-void QtRibbonWindowButtonGroup::closeWindow()
+void QtRibbonButtonGroup::closeWindow()
 {
     if(parentWidget())
         parentWidget()->close();
 }
 
-void QtRibbonWindowButtonGroup::minWindow()
+void QtRibbonButtonGroup::minWindow()
 {
     if(parentWidget())
         parentWidget()->showMinimized();
 }
 
-void QtRibbonWindowButtonGroup::maxWindow()
+void QtRibbonButtonGroup::maxWindow()
 {
     QWidget *parent = parentWidget();
 

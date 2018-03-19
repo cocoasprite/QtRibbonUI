@@ -21,14 +21,20 @@ DESTDIR         = $$PWD/../bin
 
 SOURCES         += \
                 QtRibbonWindow.cpp \
-    QtRibbonWindowButtonGroup.cpp \
-    QtRibbonWindowBar.cpp
+    QtRibbonWindowBar.cpp \
+    QtRibbonButtonGroup.cpp \
+    QtRibbonQuickAccessBar.cpp \
+    QtRibbonToolButton.cpp \
+    QtRibbonSeparatorWidget.cpp
 
 HEADERS         += \
                 QtRibbonWindow.h \
                 LibRibbonUIGlobal.h \
-    QtRibbonWindowButtonGroup.h \
-    QtRibbonWindowBar.h
+    QtRibbonWindowBar.h \
+    QtRibbonButtonGroup.h \
+    QtRibbonQuickAccessBar.h \
+    QtRibbonToolButton.h \
+    QtRibbonSeparatorWidget.h
 
 RESOURCES += \
     qss.qrc

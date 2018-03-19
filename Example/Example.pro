@@ -21,3 +21,6 @@ SOURCES         += \
                 main.cpp
 
 include($$PWD/../LibRibbonUI.pri)
+
+RESOURCES += \
+    icon.qrc

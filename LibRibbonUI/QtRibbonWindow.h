@@ -4,7 +4,7 @@
 #include "LibRibbonUIGlobal.h"
 #include <QMainWindow>
 
-class QtRibbonWindowButtonGroup;
+class QtRibbonButtonGroup;
 class QtRibbonWindowBar;
 
 class LIBRIBBONUISHARED_EXPORT QtRibbonWindow : public QMainWindow
@@ -12,9 +12,17 @@ class LIBRIBBONUISHARED_EXPORT QtRibbonWindow : public QMainWindow
     Q_OBJECT
 public:
     QtRibbonWindow(QWidget* parent = nullptr);
+    ~QtRibbonWindow();
 
- private:
-    QtRibbonWindowButtonGroup *m_wbg;
+public:
+    QtRibbonWindowBar* ribbonWindowBar();
+
+protected slots:
+    void onWindowTitleChanged(const QString &title);
+    void onWindowIconChanged(const QIcon &icon);
+
+private:
+    QtRibbonButtonGroup *m_bg;
     QtRibbonWindowBar *m_wb;
 };
 

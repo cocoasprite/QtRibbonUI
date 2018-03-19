@@ -58,5 +58,31 @@ QPushButton#QtRibbonMinWindowButton:focus
 /* 菜单栏 */
 QtRibbonWindowBar
 {
-  background-color: #E3E6E8;
+    background-color: #E3E3E5;
+}
+
+/* 快速响应栏中的按钮 */
+QtRibbonToolButton
+{
+    border:none;
+    color:#444444;
+    background-color:transparent;
+}
+QtRibbonToolButton::pressed
+{
+    color:#444444;
+    border: 1px solid #FFBF3E;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,stop:0 #FDEDA3, stop:0.1282 #FDD36A,stop:0.8333 #FCD57C, stop:1 #FDFDEB);
+}
+QtRibbonToolButton::checked
+{
+    color:#444444;
+    border: 1px solid #f2ca58;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,stop:0 #FDEEB3, stop:0.1282 #FDE38A,stop:0.8333 #FCE58C, stop:1 #FDFDEB);
+}
+QtRibbonToolButton::hover
+{
+    color:#000000;
+    border: 1px solid #f2ca58;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,stop:0 #FDEEB3, stop:0.1282 #FDE38A,stop:0.8333 #FCE58C, stop:1 #FDFDEB);
 }

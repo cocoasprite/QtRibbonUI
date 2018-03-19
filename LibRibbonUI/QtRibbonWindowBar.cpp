@@ -1,28 +1,33 @@
 #include "QtRibbonWindowBar.h"
+#include "QtRibbonQuickAccessBar.h"
+
+class QtRibbonWindowBarPrivate
+{
+public:
+    QtRibbonWindowBarPrivate(QtRibbonWindowBar *parent = nullptr)
+    {
+        m_quickAccessBar = new QtRibbonQuickAccessBar(parent);
+        m_windowBar = parent;
+    }
+
+public:
+    QtRibbonWindowBar *m_windowBar;
+    QtRibbonQuickAccessBar *m_quickAccessBar; //快速响应栏
+};
 
 QtRibbonWindowBar::QtRibbonWindowBar(QWidget *parent)
-    : QMenuBar(parent)
+    : QMenuBar(parent),
+      m_wbp(new QtRibbonWindowBarPrivate(this))
 {
-    this->addMenu(new QMenu("文件"));
-    this->addAction(new QAction("打开"));
-
-    QObject::connect(parent, &QWidget::windowTitleChanged, this, &QtRibbonWindowBar::onWindowTitleChanged);
-    QObject::connect(parent, &QWidget::windowIconChanged, this, &QtRibbonWindowBar::onWindowIconChanged);
+    this->setFixedHeight(60);
 }
 
-void QtRibbonWindowBar::onWindowTitleChanged(const QString &title)
+QtRibbonWindowBar::~QtRibbonWindowBar()
 {
-    Q_UNUSED(title);
-    update();
+    delete m_wbp;
 }
 
-void QtRibbonWindowBar::onWindowIconChanged(const QIcon &icon)
+QtRibbonQuickAccessBar *QtRibbonWindowBar::quickAccessBar()
 {
-    if(!icon.isNull())
-    {
-        //int iconMinSize = m_d->titleBarHight - 6;
-        //QSize s = icon.actualSize(QSize(iconMinSize,iconMinSize));
-        //m_d->iconRightBorderPosition = m_d->widgetBord.left()+s.width();
-    }
-    update();
+    return m_wbp->m_quickAccessBar;
 }

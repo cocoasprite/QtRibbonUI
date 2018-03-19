@@ -1,18 +1,18 @@
-#ifndef QTRIBBONWINDOWBUTTONGROUP_H
-#define QTRIBBONWINDOWBUTTONGROUP_H
+#ifndef QTRIBBONBUTTONGROUP_H
+#define QTRIBBONBUTTONGROUP_H
 
 #include "LibRibbonUIGlobal.h"
 #include <QWidget>
 
-class QtRibbonWindowButtonGroupPrivate;
+class QtRibbonButtonGroupPrivate;
 
-class LIBRIBBONUISHARED_EXPORT QtRibbonWindowButtonGroup
+class LIBRIBBONUISHARED_EXPORT QtRibbonButtonGroup
         : public QWidget
 {
     Q_OBJECT
 public:
-    QtRibbonWindowButtonGroup(QWidget* parent = nullptr);
-    ~QtRibbonWindowButtonGroup();
+    QtRibbonButtonGroup(QWidget* parent = nullptr);
+    ~QtRibbonButtonGroup();
 
 protected:
     QSize sizeHint();
@@ -26,7 +26,7 @@ public slots:
 
 private:
     friend class SAWindowButtonGroupPrivate;
-    QtRibbonWindowButtonGroupPrivate *m_wbgp;
+    QtRibbonButtonGroupPrivate *m_wbgp;
 };
 
-#endif // QTRIBBONWINDOWBUTTONGROUP_H
+#endif // QTRIBBONBUTTONGROUP_H

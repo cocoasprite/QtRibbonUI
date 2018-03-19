@@ -4,15 +4,24 @@
 #include "LibRibbonUIGlobal.h"
 #include <QMenuBar>
 
+class QtRibbonWindowBarPrivate;
+class QtRibbonQuickAccessBar;
+
 class LIBRIBBONUISHARED_EXPORT QtRibbonWindowBar : public QMenuBar
 {
     Q_OBJECT
 public:
     QtRibbonWindowBar(QWidget* parent = nullptr);
+    ~ QtRibbonWindowBar();
+
+public:
+    QtRibbonQuickAccessBar *quickAccessBar();//获取快速响应栏
 
 protected slots:
-    void onWindowTitleChanged(const QString &title);
-    void onWindowIconChanged(const QIcon &icon);
+
+private:
+    friend class QtRibbonWindowBarPrivate;
+    QtRibbonWindowBarPrivate *m_wbp;
 };
 
 #endif // QTRIBBONWINDOWBAR_H
