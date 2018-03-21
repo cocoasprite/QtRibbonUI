@@ -6,6 +6,7 @@
 
 class QtRibbonWindowBarPrivate;
 class QtRibbonQuickAccessBar;
+class QtRibbonMenuButton;
 
 class LIBRIBBONUISHARED_EXPORT QtRibbonWindowBar : public QMenuBar
 {
@@ -16,6 +17,7 @@ public:
 
 public:
     QtRibbonQuickAccessBar *quickAccessBar();//获取快速响应栏
+    QtRibbonMenuButton *menuButton();//获取菜单按钮
 
 protected slots:
 

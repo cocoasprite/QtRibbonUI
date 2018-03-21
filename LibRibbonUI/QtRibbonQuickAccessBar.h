@@ -19,7 +19,7 @@ public:
 public:
     void setLogo(const QIcon &icon);
     void setTitle(const QString &title);
-    void addButton(QAction *action);
+    QtRibbonToolButton *addButton(QAction *action);
     void addSeparator();
 
 private:

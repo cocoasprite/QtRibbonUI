@@ -54,13 +54,14 @@ void QtRibbonQuickAccessBar::setTitle(const QString &title)
     m_title->setText(title);
 }
 
-void QtRibbonQuickAccessBar::addButton(QAction *action)
+QtRibbonToolButton *QtRibbonQuickAccessBar::addButton(QAction *action)
 {
     QtRibbonToolButton *btn = new QtRibbonToolButton(action, this);
     btn->setToolButtonStyle(Qt::ToolButtonIconOnly);
     btn->setFixedSize(26, 26);
     m_layoutBar->addWidget(btn);
     m_layoutBar->setAlignment(btn, Qt::AlignCenter);
+    return btn;
 }
 
 void QtRibbonQuickAccessBar::addSeparator()

@@ -4,5 +4,6 @@
         <file>redo.png</file>
         <file>undo.png</file>
         <file>edit-image.png</file>
+        <file>more.png</file>
     </qresource>
 </RCC>

@@ -1,7 +1,16 @@
+/* 主窗口 */
+QtRibbonWindow
+{
+    background-color: #FFFFFF;
+    border: 1px solid #BAC9DB;
+    min-width: 800px;
+    min-height: 600px;
+}
+
 /* Window关闭按钮 */
 QPushButton#QtRibbonCloseWindowButton
 {
-    background-color: #E3E3E5;
+    background-color: transparent;
     border:none;
 }
 QPushButton#QtRibbonCloseWindowButton:hover
@@ -20,7 +29,7 @@ QPushButton#QtRibbonCloseWindowButton:focus
 /* Window最大化按钮 */
 QPushButton#QtRibbonMaxWindowButton
 {
-    background-color: #E3E3E5;
+    background-color: transparent;
     border:none;
 }
 QPushButton#QtRibbonMaxWindowButton:hover
@@ -39,7 +48,7 @@ QPushButton#QtRibbonMaxWindowButton:focus
 /* Window最小化按钮 */
 QPushButton#QtRibbonMinWindowButton
 {
-    background-color: #E3E3E5;
+    background-color: transparent;
     border:none;
 }
 QPushButton#QtRibbonMinWindowButton:hover
@@ -58,7 +67,9 @@ QPushButton#QtRibbonMinWindowButton:focus
 /* 菜单栏 */
 QtRibbonWindowBar
 {
-    background-color: #E3E3E5;
+    background-color: #DFE9F5;
+    border: 1px solid #BAC9DB;
+    border-bottom-color: transparent;
 }
 
 /* 快速响应栏中的按钮 */
@@ -66,7 +77,7 @@ QtRibbonToolButton
 {
     border:none;
     color:#444444;
-    background-color:transparent;
+    background-color: transparent;
 }
 QtRibbonToolButton::pressed
 {
@@ -85,4 +96,35 @@ QtRibbonToolButton::hover
     color:#000000;
     border: 1px solid #f2ca58;
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,stop:0 #FDEEB3, stop:0.1282 #FDE38A,stop:0.8333 #FCE58C, stop:1 #FDFDEB);
+}
+
+/* 菜单按钮 */
+QtRibbonMenuButton
+{
+    color:white;
+    border: 1px solid #416ABD;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,stop:0 #467FBD, stop:0.5 #2A5FAC,stop:0.51 #1A4088, stop:1 #419ACF);
+}
+
+QtRibbonMenuButton::hover
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,stop:0 #7BB2EB, stop:0.5 #477ECD,stop:0.51 #114ECF, stop:1 #80E1FF);
+}
+
+QtRibbonMenuButton::pressed
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,stop:0 #467BBB, stop:0.5 #2F63AE,stop:0.51 #1C438A, stop:1 #358BC9);
+}
+
+QtRibbonMenuButton:focus
+{
+    outline: none;
+}
+
+QtRibbonMenuButton::menu-arrow
+{
+    background-color: transparent;
+    border: none;
 }

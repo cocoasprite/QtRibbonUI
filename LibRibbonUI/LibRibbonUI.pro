@@ -25,7 +25,8 @@ SOURCES         += \
     QtRibbonButtonGroup.cpp \
     QtRibbonQuickAccessBar.cpp \
     QtRibbonToolButton.cpp \
-    QtRibbonSeparatorWidget.cpp
+    QtRibbonSeparatorWidget.cpp \
+    QtRibbonMenuButton.cpp
 
 HEADERS         += \
                 QtRibbonWindow.h \
@@ -34,7 +35,8 @@ HEADERS         += \
     QtRibbonButtonGroup.h \
     QtRibbonQuickAccessBar.h \
     QtRibbonToolButton.h \
-    QtRibbonSeparatorWidget.h
+    QtRibbonSeparatorWidget.h \
+    QtRibbonMenuButton.h
 
 RESOURCES += \
-    qss.qrc
+    qss.qrc \
