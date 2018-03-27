@@ -123,8 +123,8 @@ QtRibbonMenuButton:focus
     outline: none;
 }
 
-QtRibbonMenuButton::menu-arrow
+QtRibbonMenuButton::menu-button
 {
-    background-color: transparent;
     border: none;
 }
+
